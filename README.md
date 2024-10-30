@@ -128,14 +128,6 @@ The project includes a GitLab CI/CD pipeline defined in `.gitlab-ci.yml` that au
 - **Testing**: Runs `cargo test` to execute any unit tests and validate functionality.
 - **Building**: Compiles the code in release mode to generate an optimized binary.
 
-### **Accessing the Optimized Binary**
-
-After the pipeline completes, you can download the optimized `task_cli` binary from the GitLab CI/CD interface under the **Jobs** section:
-
-1. Navigate to the **CI/CD > Jobs** page in your GitLab repository.
-2. Select the latest **build_job**.
-3. Scroll down to the **Artifacts** section and download the `task_cli` binary.
-
 ## Project Structure
 
 ```
