@@ -2,14 +2,13 @@ use rusqlite::{params, Connection, Result};
 use serde::{Deserialize, Serialize};
 use clap::{Args, Parser, Subcommand};
 
+// Define struct to map SQLite to rust
 #[derive(Debug, Serialize, Deserialize)]
 struct Task {
     id: i32,
     title: String,
     completed: bool,
 }
-
-// Implement the functions for CRUD operations here (create_task, read_tasks, etc.)
 
 #[derive(Parser)]
 #[command(name = "Task CLI", version, about = "A simple task manager CLI")]

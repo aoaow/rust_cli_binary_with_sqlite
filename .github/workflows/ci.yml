@@ -1,36 +1,32 @@
-stages:
-  - lint
-  - test
-  - build
+name: CI
 
-variables:
-  CARGO_HOME: "$CI_PROJECT_DIR/cargo"
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-cache:
-  paths:
-    - cargo/bin
-    - cargo/registry
-    - cargo/git
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
 
-lint_job:
-  stage: lint
-  image: rust:latest
-  script:
-    - rustup component add clippy
-    - cargo clippy -- -D warnings
+    steps:
+      - uses: actions/checkout@v3
 
-test_job:
-  stage: test
-  image: rust:latest
-  script:
-    - cargo test
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
 
-build_job:
-  stage: build
-  image: rust:latest
-  script:
-    - cargo build --release
-  artifacts:
-    paths:
-      - target/release/task_cli
-    expire_in: 1 week
+      - name: Build Rust project
+        run: |
+          cd rust_cli
+          cargo build --release
+
+      - name: Run Rust script
+        run: |
+          cd rust_cli
+          cargo run --release
+
