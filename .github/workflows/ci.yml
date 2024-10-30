@@ -27,7 +27,7 @@ jobs:
           cargo clippy -- -D warnings
 
       - name: test
-        run:
+        run: |
           cd rust_cli
           cargo test
 
