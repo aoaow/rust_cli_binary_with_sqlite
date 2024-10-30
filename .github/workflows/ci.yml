@@ -1,0 +1,36 @@
+stages:
+  - lint
+  - test
+  - build
+
+variables:
+  CARGO_HOME: "$CI_PROJECT_DIR/cargo"
+
+cache:
+  paths:
+    - cargo/bin
+    - cargo/registry
+    - cargo/git
+
+lint_job:
+  stage: lint
+  image: rust:latest
+  script:
+    - rustup component add clippy
+    - cargo clippy -- -D warnings
+
+test_job:
+  stage: test
+  image: rust:latest
+  script:
+    - cargo test
+
+build_job:
+  stage: build
+  image: rust:latest
+  script:
+    - cargo build --release
+  artifacts:
+    paths:
+      - target/release/task_cli
+    expire_in: 1 week
