@@ -20,6 +20,17 @@ jobs:
           profile: minimal
           override: true
 
+      - name: lint
+        run: |
+          cd rust_cli
+          rustup component add clippy
+          cargo clippy -- -D warnings
+
+      - name: test
+        run:
+          cd rust_cli
+          cargo test
+
       - name: Build Rust project
         run: |
           cd rust_cli

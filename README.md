@@ -127,7 +127,6 @@ The project includes a GitLab CI/CD pipeline defined in `.gitlab-ci.yml` that au
 - **Linting**: Uses `cargo clippy` to check code for common mistakes and adherence to best practices.
 - **Testing**: Runs `cargo test` to execute any unit tests and validate functionality.
 - **Building**: Compiles the code in release mode to generate an optimized binary.
-- **Artifact Generation**: The compiled binary (`task_cli`) is stored as a downloadable artifact.
 
 ### **Accessing the Optimized Binary**
 
