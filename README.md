@@ -3,7 +3,7 @@
 
 ## Introduction
 
-`rust_cli` is a Rust command-line application that manages a task list stored in a SQLite database. It supports creating, reading, updating, and deleting tasks via command-line arguments, demonstrating CRUD operations and leveraging Rust's unique features.
+`rust_cli` is a Rust command-line application that manages a task list stored in a SQLite database. It supports creating, reading, updating, and deleting tasks via command-line arguments, demonstrating CRUD operations and leveraging Rust's unique features. You can access the detailed introductory video [here](https://youtu.be/RmSjr4ubk3U)
 
 ## Features
 
@@ -110,10 +110,10 @@ Delete a task by its ID.
 ./target/release/task_cli delete 1
 ```
 
-## How I Used an LLM in Coding
+## How I Used an LLM in this project
 
 During the development of this project, I leveraged a Large Language Model (LLM) to enhance productivity and code quality:
-ß
+
 - **Understanding Rust Concepts**: The LLM explained complex Rust concepts like ownership, borrowing, lifetimes, and error handling with the `Result` type and the `?` operator.
 - **Best Practices**: It suggested best practices for code organization, including modularization and error handling strategies.
 - **Documentation**: The LLM helped articulate explanations in the README and code comments, ensuring clarity and comprehensiveness.
