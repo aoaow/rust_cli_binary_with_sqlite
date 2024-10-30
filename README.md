@@ -1,0 +1,1 @@
+# rust_cli_binary_with_sqlite
